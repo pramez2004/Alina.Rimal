@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Works — Alina Rimal</title>
+<meta name="description" content="Portfolio of Alina Rimal's video content across TikTok and Instagram — fashion, beauty, and lifestyle content creation.">
+<meta property="og:title" content="Works — Alina Rimal">
+<meta property="og:description" content="Portfolio of video content across TikTok and Instagram.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="canonical" href="works.html">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main" class="visually-hidden">Skip to content</a>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Alina Rimal</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="works.html" aria-current="page">Works</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html">Let's Work Together</a>
+    </div>
+  </div>
+</nav>
+<div class="nav-scrim"></div>
+
+<main id="main">
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <video class="page-hero-video" autoplay muted loop playsinline poster="assets/posters/works-hero-bg.jpg">
+    <source src="assets/videos/works-hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="page-hero-duotone"></div>
+  <div class="page-hero-scrim"></div>
+  <div class="page-hero-inner">
+    <p class="section-label">Portfolio</p>
+    <h1 class="section-title">Selected <em>works</em></h1>
+    <p class="page-hero-sub">Video content across TikTok and Instagram, plus additional reels — fashion, beauty, and lifestyle, all in one place. Click any piece to watch it right here.</p>
+  </div>
+</div>
+
+<!-- WORKS GRID -->
+<div class="section">
+  <div class="filter-bar" role="group" aria-label="Filter works by platform">
+    <button class="filter-btn" type="button" data-filter="All" aria-pressed="true">All</button>
+    <button class="filter-btn" type="button" data-filter="TikTok" aria-pressed="false">TikTok</button>
+    <button class="filter-btn" type="button" data-filter="Instagram" aria-pressed="false">Instagram</button>
+    <button class="filter-btn" type="button" data-filter="Reels" aria-pressed="false">Reels</button>
+  </div>
+
+  <div class="works-grid" id="worksGrid"></div>
+  <p class="works-empty">No works in this category yet.</p>
+</div>
+
+<!-- CTA -->
+<div class="cta-strip reveal">
+  <p class="section-label">Interested in working together?</p>
+  <h2 class="section-title">Let's create something<br><em>beautiful</em> together</h2>
+  <a class="btn btn-primary" href="contact.html">Start a Collaboration</a>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-name">Alina Rimal</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/alina.rimal/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@alina.rimal22" target="_blank" rel="noopener">TikTok</a>
+  </div>
+  <span class="footer-note">Content Creator · Model · Beauty Specialist · Nepal</span>
+</footer>
+
+<script src="js/works-data.js"></script>
+<script src="js/works-render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
