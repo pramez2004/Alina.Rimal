@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Alina Rimal Site</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-shell">
+
+  <div class="admin-header">
+    <div>
+      <div class="admin-title">Alina Rimal <span>— Admin</span></div>
+      <div class="admin-sub">Edit site content, then download the updated files and upload them to your GitHub repo.</div>
+    </div>
+  </div>
+
+  <div class="admin-banner hidden" id="draftBanner">
+    <span>You have unsaved draft changes from a previous session — they've been restored.</span>
+    <button type="button" class="admin-remove-btn" id="discardDraftBtn">Discard draft &amp; reload published content</button>
+  </div>
+
+  <div class="admin-instructions">
+    <strong>How this works</strong> — this site has no server, so changes here save only in this browser (as a draft) until you publish them.
+    <ol>
+      <li>Edit anything below — it auto-saves as a draft in this browser as you type.</li>
+      <li>Click <strong>Download Updated Files</strong> at the bottom — you'll get two files: <code>site-data.js</code> and <code>works-data.js</code>.</li>
+      <li>In your project folder, replace the existing <code>js/site-data.js</code> and <code>js/works-data.js</code> with the downloaded versions.</li>
+      <li>Upload/commit those two files to your GitHub repo the same way you've been uploading everything else — the live site updates from there.</li>
+    </ol>
+    New photos or videos still need to be uploaded as files to <code>assets/</code> the same way as before — this panel only edits text and links, and which existing asset files are referenced.
+  </div>
+
+  <div class="admin-tabs">
+    <button type="button" class="admin-tab active" data-panel="panel-home">Home &amp; About</button>
+    <button type="button" class="admin-tab" data-panel="panel-contact">Contact &amp; FAQ</button>
+    <button type="button" class="admin-tab" data-panel="panel-portfolio">Portfolio Items</button>
+  </div>
+
+  <!-- ============ HOME & ABOUT ============ -->
+  <div class="admin-panel active" id="panel-home">
+
+    <div class="admin-section">
+      <div class="admin-section-title">Hero</div>
+      <div class="admin-section-hint">The big banner at the top of the Home page.</div>
+      <div class="admin-field">
+        <label>Tagline</label>
+        <input type="text" id="f-heroTag">
+      </div>
+      <div class="admin-field">
+        <label>Subtitle</label>
+        <textarea id="f-heroSubtitle" rows="2"></textarea>
+      </div>
+      <div class="admin-field">
+        <label>Hero photo (file path in assets/ — upload the image file separately)</label>
+        <input type="text" id="f-heroPhoto">
+      </div>
+      <div class="admin-field">
+        <label>Tags / pills</label>
+        <div id="f-heroPills"></div>
+        <button type="button" class="admin-add-btn" data-add-for="f-heroPills">+ Add pill</button>
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <div class="admin-section-title">About</div>
+      <div class="admin-field">
+        <label>Paragraphs</label>
+        <div id="f-aboutParagraphs"></div>
+        <button type="button" class="admin-add-btn" data-add-for="f-aboutParagraphs">+ Add paragraph</button>
+      </div>
+      <div class="admin-field">
+        <label>Stat cards</label>
+        <div id="f-aboutStats"></div>
+        <button type="button" class="admin-add-btn" data-add-for="f-aboutStats">+ Add stat</button>
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <div class="admin-section-title">Skills &amp; Expertise</div>
+      <div id="f-skills"></div>
+      <button type="button" class="admin-add-btn" data-add-for="f-skills">+ Add skill</button>
+    </div>
+
+    <div class="admin-section">
+      <div class="admin-section-title">Why Collaborate</div>
+      <div id="f-why"></div>
+      <button type="button" class="admin-add-btn" data-add-for="f-why">+ Add card</button>
+    </div>
+  </div>
+
+  <!-- ============ CONTACT & FAQ ============ -->
+  <div class="admin-panel" id="panel-contact">
+
+    <div class="admin-section">
+      <div class="admin-section-title">Contact Page Hero</div>
+      <div class="admin-field">
+        <label>Subtitle</label>
+        <textarea id="f-contactHeroSub" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <div class="admin-section-title">Intro Text</div>
+      <div id="f-contactIntro"></div>
+      <button type="button" class="admin-add-btn" data-add-for="f-contactIntro">+ Add paragraph</button>
+    </div>
+
+    <div class="admin-section">
+      <div class="admin-section-title">Contact Links</div>
+      <div class="admin-field">
+        <label>Email</label>
+        <input type="text" id="f-email">
+      </div>
+      <div class="admin-row">
+        <div class="admin-field">
+          <label>Instagram handle</label>
+          <input type="text" id="f-igHandle">
+        </div>
+        <div class="admin-field">
+          <label>Instagram URL</label>
+          <input type="text" id="f-igUrl">
+        </div>
+      </div>
+      <div class="admin-row">
+        <div class="admin-field">
+          <label>TikTok handle</label>
+          <input type="text" id="f-ttHandle">
+        </div>
+        <div class="admin-field">
+          <label>TikTok URL</label>
+          <input type="text" id="f-ttUrl">
+        </div>
+      </div>
+      <div class="admin-field">
+        <label>CV file path (in assets/ — upload the PDF separately if you replace it)</label>
+        <input type="text" id="f-cvPath">
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <div class="admin-section-title">FAQ</div>
+      <div id="f-faq"></div>
+      <button type="button" class="admin-add-btn" data-add-for="f-faq">+ Add question</button>
+    </div>
+  </div>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <div class="admin-panel" id="panel-portfolio">
+    <div class="admin-section">
+      <div class="admin-section-title">Portfolio Items</div>
+      <div class="admin-section-hint">These appear on the Works page, and on Home if marked "Featured". To add a new video, first upload the video file (and a poster image) to <code>assets/videos/</code> and <code>assets/posters/</code>, then add an item here pointing to those file paths.</div>
+      <div id="f-portfolio"></div>
+      <button type="button" class="admin-add-btn" id="addWorkBtn">+ Add portfolio item</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="admin-footer-bar">
+  <span class="admin-save-status" id="saveStatus">Not saved yet</span>
+  <button type="button" class="admin-btn admin-btn-outline" id="saveNowBtn">Save Draft Now</button>
+  <button type="button" class="admin-btn admin-btn-primary" id="exportBtn">Download Updated Files</button>
+</div>
+
+<script src="js/site-data.js"></script>
+<script src="js/works-data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
